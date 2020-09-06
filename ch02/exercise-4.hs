@@ -1,0 +1,1 @@
+mylast xs = head (reverse xs)
