@@ -38,6 +38,7 @@ not True = False
 (&&) :: Bool -> Bool -> Bool
 (&&) True b = b
 (&&) False b = False
+
 -- (&&) True True = True
 -- (&&) _ _ = False
 --
@@ -51,9 +52,8 @@ fst (x, _) = x
 snd :: (a, b) -> b
 snd (_, y) = y
 
-
 test :: [Char] -> Bool
-test ['a',_,_] = True
+test ['a', _, _] = True
 test _ = False
 
 is_start_a :: [Char] -> Bool
@@ -61,17 +61,18 @@ is_start_a ('a' : _) = True
 is_start_a _ = False
 
 head :: [a] -> a
-head (x:_) = x
+head (x : _) = x
 
 tail :: [a] -> [a]
-tail (_:xs) = xs
+tail (_ : xs) = xs
 
 --4.5
 
 hoge = (\x -> x + x) 2
 
 add :: Int -> Int -> Int
-add = \ x -> (\y -> x + y)
+add = \x -> (\y -> x + y)
+
 -- add = \ x -> \ y -> x + y でも良い
 
 const :: a -> b -> a
@@ -81,10 +82,9 @@ const x = \_ -> x
 odds :: Int -> [Int]
 -- odds n = map f [0..n-1]
 --   where f x = x * 2 + 1
-odds n = map (\x -> x * 2 + 1) [0..n-1]
+odds n = map (\x -> x * 2 + 1) [0 .. n -1]
 
-hogehoge = (*2) 3 -- 6
-
+hogehoge = (* 2) 3 -- 6
 
 sum :: [Int] -> Int
 sum = foldl (+) 0
