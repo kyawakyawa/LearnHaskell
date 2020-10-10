@@ -20,8 +20,7 @@ adderSub n = do
     then do
       x <- getDigit ""
       r <- adderSub (n - 1)
-      let tmp = x + r
-      return tmp
+      return (x + r)
     else do
       return 0
 
