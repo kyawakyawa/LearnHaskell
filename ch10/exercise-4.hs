@@ -6,7 +6,7 @@ getDigit prompt = do
   x <- getChar
   newline
   if isDigit x
-    then do return (digitToInt x)
+    then return (digitToInt x)
     else do
       putStrLn "ERROR: Invalid digit"
       getDigit prompt
